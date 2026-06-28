@@ -1,4 +1,5 @@
 # Sistema de Controle e Gestão de Dados
+# Sistema de estacionamento
 
 ## Descrição
 Este projeto é uma aplicação desenvolvida em Java focada na implementação de boas práticas de arquitetura de software e lógica de controle. O objetivo central foi estruturar um sistema robusto, utilizando a **Orientação a Objetos (POO)** para garantir a modularidade e a manutenibilidade do código. É um software de estacionamento utilizando Maria Db como banco de dados.
