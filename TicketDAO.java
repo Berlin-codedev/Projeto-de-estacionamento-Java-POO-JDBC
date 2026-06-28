@@ -50,12 +50,19 @@ public class TicketDAO {
     }
 
 public List<Ticket> buscarTodosAbertos() throws SQLException {
-    String sql = "SELECT * FROM TICKET WHERE DATA_SAIDA IS NULL";
+    String sql = "SELECT t.*, v.PLACA, v.MODELO, v.CATEGORIA" +
+            "FROM TICKET t " + "JOIN VEICULO v ON t.ID_VEICULO = v.ID_VEICULO" +
+            "WHERE tDATA_SAIDA IS NULL";
     List<Ticket> list = new ArrayList<>();
     try (PreparedStatement stmt = conexao.prepareStatement(sql);
          ResultSet rs = stmt.executeQuery()) {
         while (rs.next()) {
+            Veiculo v = new Veiculo();
+            v.setPlaca(rs.getString("PLACA"));
+            v.setModelo(rs.getString("MODELO"));
+            v.setCategoria(rs.getString("CATEGORIA"));
             Ticket t = new Ticket();
+            t.setVeiculo(v);
             t.setIdTicket(rs.getInt("ID_TICKET"));
             t.setIdTicket(rs.getInt("ID_VEICULO"));
             t.setDataEntrada(rs.getTimestamp("DATA_ENTRADA"));
