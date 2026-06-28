@@ -72,9 +72,9 @@ public class Servico {
             } else {
                 System.out.println("\n---- VEICULOS NO ESTACIONEMENTO ------");
                 for (Ticket t : tickets){
-                    System.out.println("ID Ticket: " + t.getIdTicket()+
-                            " | ID Veiculo: " + t.getIdVeiculo()+
-                            " | Entrada: " + t.getDataEntrada());
+                    System.out.println(String.format("ID Ticket: %d | Placa %s | Modelo: %s",
+                            t.getIdTicket(), t.getVeiculo().getPlaca(),
+                            t.getVeiculo().getModelo()));
                 }
             }
         }
