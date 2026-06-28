@@ -1,8 +1,11 @@
 package Ticket;
+import Veiculo.Veiculo;
+
 import java.sql.Timestamp;
 public class Ticket {
     private int id_ticket;
     private int id_veiculo;
+    private Veiculo veiculo;
     private Timestamp dataEntrada;
     private Timestamp dataSaida;
     public Ticket(){
@@ -23,4 +26,6 @@ public class Ticket {
     public void setDataEntrada(Timestamp dataEntrada){this.dataEntrada = dataEntrada;}
     public Timestamp getDataSaida(){ return dataSaida;}
     public void setDataSaida(Timestamp dataSaida){this.dataSaida = dataSaida;}
+    public void setVeiculo(Veiculo veiculo ){this.veiculo = veiculo;}
+    public Veiculo getVeiculo(){return veiculo;}
 }
